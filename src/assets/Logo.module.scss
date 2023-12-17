@@ -1,0 +1,37 @@
+.logo {
+    .square {
+        stroke-dasharray: 650;
+        stroke-dashoffset: -650;
+        animation: draw-square  1s ease-in-out infinite;
+    }
+
+    .hexagon {
+        stroke-dasharray: var(--length);
+        stroke-dashoffset: calc(var(--length) * -1);
+        animation: draw-hexagon  1s ease-in-out infinite;
+        transform-origin: center center;
+    }
+}
+
+@keyframes draw-square {
+    from {
+        stroke-dashoffset: -650;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+    
+}
+
+@keyframes draw-hexagon {
+    from {
+        stroke-dashoffset: calc(var(--length) * -1);
+        transform: rotate(0);
+    }
+
+    to {
+        stroke-dashoffset: 0;
+        transform: rotate(360deg);
+    }   
+}
